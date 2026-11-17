@@ -32,9 +32,11 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xffffff);
 const camera = new THREE.PerspectiveCamera(54, 1, .1, 180);
 const clock = new THREE.Clock();
-let yaw = .785, pitch = .9, distance = 125, seed = 7, dragging = false, lastX = 0, lastY = 0;
+let yaw = .785, pitch = .58, distance = 105, seed = 7, dragging = false, lastX = 0, lastY = 0;
 const forest = new THREE.Group();
+const timeline = new THREE.Group();
 scene.add(forest);
+scene.add(timeline);
 
 const palette = {
   ground: 0x5d714f, moss: 0x71855b, soil: 0x55483b, snow: 0xcbd6d0,
@@ -45,6 +47,37 @@ const material = (color) => new THREE.MeshLambertMaterial({color, flatShading:tr
 const box = (w,h,d,color) => new THREE.Mesh(new THREE.BoxGeometry(w,h,d), material(color));
 const cylinder = (top,bottom,height,color) => new THREE.Mesh(new THREE.CylinderGeometry(top,bottom,height,6), material(color));
 const cone = (radius,height,color) => new THREE.Mesh(new THREE.ConeGeometry(radius,height,7), material(color));
+function timelineLabel(text) {
+  const labelCanvas = document.createElement("canvas");
+  labelCanvas.width = 512; labelCanvas.height = 128;
+  const context = labelCanvas.getContext("2d");
+  context.imageSmoothingEnabled = true;
+  context.fillStyle = "#202020";
+  context.font = "italic 52px Georgia, serif";
+  context.textAlign = "center"; context.textBaseline = "middle";
+  context.fillText(text, 256, 64);
+  const texture = new THREE.CanvasTexture(labelCanvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  texture.minFilter = THREE.LinearMipmapLinearFilter; texture.magFilter = THREE.LinearFilter;
+  const label = new THREE.Mesh(
+    new THREE.PlaneGeometry(6.5, 2.1),
+    new THREE.MeshBasicMaterial({map:texture, transparent:true, depthTest:false, side:THREE.DoubleSide})
+  );
+  label.geometry.rotateY(Math.PI / 2);
+  label.rotation.x = Math.PI / 2;
+  return label;
+}
+function makeTimeline() {
+  const x = 37.5, start = 34, length = -68;
+  const dates = ["1950", "1980", "2010", "2013", "2016", "2020", "2023", "2026"];
+  const positions = [0, .30, .55, .66, .76, .85, .93, 1];
+  for (let i=0; i<dates.length; i++) {
+    const z = start + positions[i]*length;
+    const label = timelineLabel(dates[i]);
+    label.position.set(x, .18, z);
+    timeline.add(label);
+  }
+}
 function tree(x, z, kind, scale, index) {
   const group = new THREE.Group();
   group.position.set(x, 0, z); group.scale.setScalar(scale);
@@ -84,6 +117,7 @@ function makeForest() {
 const hemi = new THREE.HemisphereLight(0xd8ebff, 0x25372d, 2.2); scene.add(hemi);
 const sun = new THREE.DirectionalLight(0xffe6bd, 3.1); sun.position.set(-25,40,18); sun.castShadow=true; sun.shadow.mapSize.set(1024,1024); scene.add(sun);
 makeForest();
+makeTimeline();
 function resize() { const w=canvas.clientWidth,h=canvas.clientHeight; renderer.setSize(Math.floor(w*.62),Math.floor(h*.62),false); camera.aspect=w/h; camera.updateProjectionMatrix(); }
 function animate() {
   requestAnimationFrame(animate);
@@ -95,7 +129,7 @@ addEventListener("resize", resize); resize(); animate();
 canvas.addEventListener("pointerdown", e=>{dragging=true;lastX=e.clientX;lastY=e.clientY;canvas.classList.add("dragging");canvas.setPointerCapture(e.pointerId)});
 canvas.addEventListener("pointerup", ()=>{dragging=false;canvas.classList.remove("dragging")});
 canvas.addEventListener("pointermove", e=>{if(!dragging)return;yaw-=(e.clientX-lastX)*.006;pitch=Math.max(.18,Math.min(1.35,pitch+(e.clientY-lastY)*.006));lastX=e.clientX;lastY=e.clientY});
-canvas.addEventListener("wheel", e=>{e.preventDefault();distance=Math.max(9,Math.min(80,distance+e.deltaY*.035))},{passive:false});
+canvas.addEventListener("wheel", e=>{e.preventDefault();distance=Math.max(30,Math.min(220,distance+e.deltaY*.035))},{passive:false});
 addEventListener("keydown", e=>{if(e.key.toLowerCase()==="r"){seed=Math.floor(Math.random()*10000);makeForest()}});
 </script>
 </body>
