@@ -12,9 +12,9 @@ const html = `<!doctype html>
   * { box-sizing: border-box; }
   html, body { height: 100%; margin: 0; overflow: hidden; background: #fff; }
   body { display:flex; align-items:center; justify-content:center; }
-  #scene { display:block; width:min(88vw, 1100px); height:min(78vh, 700px); border:1px solid #d5d5d5; cursor:grab; image-rendering:pixelated; }
+  #scene { display:block; width:100vw; height:100vh; border:0; outline:0; cursor:grab; image-rendering:pixelated; }
   #scene.dragging { cursor:grabbing; }
-  @media (max-width: 600px) { #scene { width:94vw; height:76vh; } }
+  @media (max-width: 600px) { #scene { width:100vw; height:100vh; } }
 </style>
 </head>
 <body>
@@ -32,7 +32,7 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xffffff);
 const camera = new THREE.PerspectiveCamera(54, 1, .1, 180);
 const clock = new THREE.Clock();
-let yaw = .62, pitch = .58, distance = 48, seed = 7, dragging = false, lastX = 0, lastY = 0;
+let yaw = .785, pitch = .9, distance = 125, seed = 7, dragging = false, lastX = 0, lastY = 0;
 const forest = new THREE.Group();
 scene.add(forest);
 
@@ -43,10 +43,12 @@ const palette = {
 };
 const material = (color) => new THREE.MeshLambertMaterial({color, flatShading:true});
 const box = (w,h,d,color) => new THREE.Mesh(new THREE.BoxGeometry(w,h,d), material(color));
+const cylinder = (top,bottom,height,color) => new THREE.Mesh(new THREE.CylinderGeometry(top,bottom,height,6), material(color));
+const cone = (radius,height,color) => new THREE.Mesh(new THREE.ConeGeometry(radius,height,7), material(color));
 function tree(x, z, kind, scale, index) {
   const group = new THREE.Group();
   group.position.set(x, 0, z); group.scale.setScalar(scale);
-  const trunk = box(kind === "birch" ? .62 : .46, 4.7, kind === "birch" ? .62 : .46, kind === "birch" ? palette.birch : palette.bark);
+  const trunk = cylinder(kind === "birch" ? .26 : .18, kind === "birch" ? .38 : .27, 4.7, kind === "birch" ? palette.birch : palette.bark);
   trunk.position.y = 2.35; trunk.castShadow = true; group.add(trunk);
   if (kind === "birch") {
     for (let i=0; i<5; i++) {
@@ -55,21 +57,22 @@ function tree(x, z, kind, scale, index) {
     }
   }
   const colors = kind === "spruce" ? palette.spruce : kind === "larch" ? palette.larch : palette.pine;
-  const tiers = kind === "birch" ? 3 : 5;
+  const tiers = kind === "birch" ? 3 : kind === "larch" ? 6 : 5;
   for (let i=0; i<tiers; i++) {
-    const y = 3.5 + i*1.12, width = kind === "birch" ? 2.4 - i*.18 : 5.2 - i*.72;
-    const foliage = box(width, 1.75, width, colors[(i+index)%colors.length]);
-    foliage.position.y = y; foliage.rotation.y = (index%2)*.12; foliage.castShadow = true; group.add(foliage);
+    const y = 3.55 + i*(kind === "larch" ? .86 : 1.08);
+    const radius = kind === "birch" ? 1.15 - i*.08 : 2.55 - i*.32;
+    const foliage = cone(radius, kind === "birch" ? 1.55 : 1.9, colors[(i+index)%colors.length]);
+    foliage.position.set((i%2 ? -.12 : .12), y, (index%3 === 0 ? .08 : -.08));
+    foliage.rotation.y = (index%2)*.12; foliage.castShadow = true; group.add(foliage);
   }
   if (kind === "birch") {
-    const crown = box(2.8, 1.6, 2.8, colors[index%colors.length]); crown.position.y=7.1; crown.castShadow=true; group.add(crown);
+    const crown = cone(1.35, 1.7, colors[index%colors.length]); crown.position.y=7.15; crown.castShadow=true; group.add(crown);
   }
   forest.add(group);
 }
 function makeForest() {
   while (forest.children.length) forest.remove(forest.children[0]);
   const rng = () => { const x = Math.sin(seed++ * 12.9898) * 43758.5453; return x - Math.floor(x); };
-  const ground = box(82, 1.4, 82, palette.ground); ground.position.y=-.7; ground.receiveShadow=true; forest.add(ground);
   for (let x=-34; x<=34; x+=5.2) for (let z=-34; z<=34; z+=5.2) {
     if (rng() < .18) continue;
     const edge = Math.abs(x) > 27 || Math.abs(z) > 27;
@@ -77,15 +80,11 @@ function makeForest() {
     const kind = kinds[Math.floor(rng()*kinds.length)];
     tree(x+(rng()-.5)*3, z+(rng()-.5)*3, kind, .65+rng()*.52, Math.floor(rng()*9));
   }
-  for (let i=0;i<34;i++) {
-    const rock=box(.6+rng()*1.5,.25+rng()*.5,.6+rng()*1.5, i%3?0x68746d:0x7d8378);
-    rock.position.set((rng()-.5)*72,.1,(rng()-.5)*72); rock.rotation.y=rng()*3; forest.add(rock);
-  }
 }
 const hemi = new THREE.HemisphereLight(0xd8ebff, 0x25372d, 2.2); scene.add(hemi);
 const sun = new THREE.DirectionalLight(0xffe6bd, 3.1); sun.position.set(-25,40,18); sun.castShadow=true; sun.shadow.mapSize.set(1024,1024); scene.add(sun);
 makeForest();
-function resize() { const w=canvas.clientWidth,h=canvas.clientHeight; renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix(); }
+function resize() { const w=canvas.clientWidth,h=canvas.clientHeight; renderer.setSize(Math.floor(w*.62),Math.floor(h*.62),false); camera.aspect=w/h; camera.updateProjectionMatrix(); }
 function animate() {
   requestAnimationFrame(animate);
   const target = new THREE.Vector3(0, 3.5, 0);
