@@ -7,7 +7,7 @@
 #stage{position:absolute;inset:0;width:100%;height:100%;display:block}
 #forest-art{transition:opacity .2s}#visualization.forest-focus #forest-art{opacity:1}#visualization.has-focus #forest-art{opacity:.55}
 #forest-tooltip{position:fixed;left:0;top:0;z-index:25;width:310px;max-width:calc(100vw - 24px);padding:15px;background:white;border:1px solid #dce3d7;border-left:4px solid #587157;border-radius:7px;box-shadow:0 5px 20px #213d2e13;pointer-events:none;font:12px/1.55 Inter,Arial,sans-serif;white-space:pre-line}#forest-tooltip[hidden]{display:none}.forest-hit{pointer-events:all;outline:none;cursor:pointer}.forest-hit,.forest-hit:focus,.forest-hit:focus-visible,.forest-hit:active{outline:none!important;stroke:none!important;box-shadow:none!important}#stage:focus,#event-overlay:focus{outline:none}#event-overlay{position:absolute;inset:0;width:100%;height:100%;overflow:hidden;pointer-events:none}
-.fauna-hit{pointer-events:all;cursor:pointer;outline:none!important;stroke:none!important}.fauna-hit:focus-visible{stroke:#52654e!important;stroke-width:1;stroke-dasharray:2 3}.pin-hit{pointer-events:all;cursor:pointer;outline:none}.pin-dot{pointer-events:none;stroke:#fff;stroke-width:1.5}.pin-halo{pointer-events:none;fill:none;stroke-width:1.5;opacity:0}.pin-group:focus-within .pin-dot{stroke:#283c31;stroke-width:2}.event-link{stroke:#000;stroke-width:.65;fill:none;pointer-events:none}.event-stem{stroke-width:1;pointer-events:none;opacity:.7}
+.people-hit{pointer-events:all;cursor:pointer;outline:none!important;stroke:none!important}.people-hit:focus-visible{stroke:#52654e!important;stroke-width:1;stroke-dasharray:2 3}.fauna-hit{pointer-events:all;cursor:pointer;outline:none!important;stroke:none!important}.fauna-hit:focus-visible{stroke:#52654e!important;stroke-width:1;stroke-dasharray:2 3}.pin-hit{pointer-events:all;cursor:pointer;outline:none}.pin-dot{pointer-events:none;stroke:#fff;stroke-width:1.5}.pin-halo{pointer-events:none;fill:none;stroke-width:1.5;opacity:0}.pin-group:focus-within .pin-dot{stroke:#283c31;stroke-width:2}.event-link{stroke:#000;stroke-width:.65;fill:none;pointer-events:none}.event-stem{stroke-width:1;pointer-events:none;opacity:.7}
 .event-tooltip{position:fixed;left:0;top:0;width:246px;max-width:calc(100vw - 24px);padding:12px 14px;background:white;border:1px solid #e0e5df;border-left:4px solid var(--band-color,#909698);border-radius:7px;box-shadow:0 5px 20px #213d2e13;z-index:20;pointer-events:none}
 .event-tooltip[hidden],#event-detail[hidden],#detail-figure[hidden],#detail-text[hidden],#load-error[hidden]{display:none}
 .tooltip-year{font-size:11px;color:#6c786e;margin-bottom:5px}.tooltip-title{font-size:13px;font-weight:500;line-height:1.4;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;text-align:left}
@@ -922,6 +922,225 @@
 <polygon class="category-divider" points="318.00,734.00 1388.00,573.50 1388.00,513.50 318.00,674.00" fill="url(#glass)" stroke="#c0c9bc" stroke-opacity=".55" stroke-width=".9"/>
 </g>
 <defs>
+<g id="person-standing"><circle cy="-28" r="3.4"/><path d="M-3,-23 Q0,-25 3,-23 L5,-12 3,-11 2,-18 2,-11 4,0 1,0 -1,-10 -2,0 -5,0 -3,-12 -3,-18 -5,-10 -7,-11Z"/></g>
+<g id="person-walking"><circle cx="1" cy="-28" r="3.3"/><path d="M-1,-23 4,-23 5,-17 10,-13 9,-11 3,-15 2,-11 8,-1 5,0 -1,-8 -6,0 -9,-1 -3,-13 -3,-18 -7,-13 -9,-15 -4,-21Z"/></g>
+<g id="person-coat"><circle cy="-28" r="3.3"/><path d="M-3,-23 3,-23 7,-11 4,-10 2,-17 5,-6 2,-6 3,0 0,0 -1,-6 -2,0 -5,0 -4,-6 -7,-6 -3,-17 -6,-10 -8,-11Z"/></g>
+</defs>
+<g id="people-art" opacity=".42" fill="#1b1d1a" pointer-events="none" aria-label="Popolazione mondiale dal 1950 al 2026: densità proporzionata ai valori ONU, figure presenti esclusivamente nelle tre fasce tematiche">
+<g class="person-silhouette" data-year="1950" data-band="0" data-depth="114.2" transform="translate(365.2 746.3) scale(0.75)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="1950" data-band="1" data-depth="241.4" transform="translate(313.5 685.1) scale(0.83)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="1950" data-band="2" data-depth="376.4" transform="translate(191.3 630.3) scale(0.75)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="1950" data-band="0" data-depth="38.4" transform="translate(439.7 776.2) scale(0.82)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="1950" data-band="1" data-depth="215.0" transform="translate(292.8 702.6) scale(0.74)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="1950" data-band="2" data-depth="405.2" transform="translate(199.6 613.5) scale(0.87)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="1950" data-band="0" data-depth="36.0" transform="translate(413.5 781.5) scale(0.89)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="1950" data-band="1" data-depth="279.3" transform="translate(264.9 671.9) scale(0.74)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="1950" data-band="2" data-depth="439.9" transform="translate(172.2 598.7) scale(0.86)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="1950" data-band="0" data-depth="70.7" transform="translate(383.3 767.2) scale(0.82)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="1980" data-band="0" data-depth="94.2" transform="translate(469.9 741.5) scale(0.79)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="1980" data-band="1" data-depth="217.6" transform="translate(360.0 691.0) scale(0.75)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="1980" data-band="2" data-depth="389.1" transform="translate(252.7 614.2) scale(0.79)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="1980" data-band="0" data-depth="112.0" transform="translate(537.6 721.6) scale(0.75)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="1980" data-band="1" data-depth="216.1" transform="translate(424.8 682.2) scale(0.79)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="1980" data-band="2" data-depth="376.5" transform="translate(276.4 617.5) scale(0.78)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="1980" data-band="0" data-depth="36.8" transform="translate(579.8 756.1) scale(0.90)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="1980" data-band="1" data-depth="251.7" transform="translate(406.9 665.5) scale(0.90)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="1980" data-band="2" data-depth="452.7" transform="translate(238.3 581.9) scale(0.90)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="1980" data-band="0" data-depth="99.7" transform="translate(436.8 743.4) scale(0.87)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="1980" data-band="1" data-depth="245.8" transform="translate(385.2 672.0) scale(0.75)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="1980" data-band="2" data-depth="386.2" transform="translate(362.0 599.4) scale(0.84)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="1980" data-band="0" data-depth="133.5" transform="translate(488.7 717.4) scale(0.74)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="1980" data-band="1" data-depth="199.2" transform="translate(381.2 697.9) scale(0.84)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="1980" data-band="2" data-depth="382.6" transform="translate(327.9 606.5) scale(0.79)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="1980" data-band="0" data-depth="33.0" transform="translate(499.2 770.2) scale(0.90)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="1980" data-band="1" data-depth="275.7" transform="translate(369.0 658.2) scale(0.75)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="1980" data-band="2" data-depth="416.2" transform="translate(305.8 591.5) scale(0.80)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2010" data-band="0" data-depth="116.7" transform="translate(594.6 710.6) scale(0.80)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2010" data-band="1" data-depth="201.3" transform="translate(561.4 669.7) scale(0.89)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2010" data-band="2" data-depth="456.3" transform="translate(459.5 546.8) scale(0.78)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2010" data-band="0" data-depth="32.0" transform="translate(696.5 741.2) scale(0.77)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2010" data-band="1" data-depth="231.1" transform="translate(502.9 662.3) scale(0.86)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2010" data-band="2" data-depth="366.5" transform="translate(514.0 587.2) scale(0.82)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2010" data-band="0" data-depth="37.3" transform="translate(667.9 742.6) scale(0.75)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2010" data-band="1" data-depth="294.2" transform="translate(534.8 623.3) scale(0.80)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2010" data-band="2" data-depth="409.4" transform="translate(441.0 575.0) scale(0.75)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2010" data-band="0" data-depth="104.6" transform="translate(704.2 700.7) scale(0.85)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2010" data-band="1" data-depth="220.9" transform="translate(599.1 653.4) scale(0.83)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2010" data-band="2" data-depth="431.0" transform="translate(371.0 573.8) scale(0.84)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2010" data-band="0" data-depth="85.7" transform="translate(660.4 717.5) scale(0.78)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2010" data-band="1" data-depth="303.6" transform="translate(471.7 627.7) scale(0.86)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2010" data-band="2" data-depth="408.4" transform="translate(500.7 566.5) scale(0.79)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2010" data-band="0" data-depth="83.0" transform="translate(622.3 724.7) scale(0.76)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2010" data-band="1" data-depth="248.5" transform="translate(542.7 646.9) scale(0.86)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2010" data-band="2" data-depth="447.6" transform="translate(385.4 562.6) scale(0.75)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2010" data-band="0" data-depth="69.2" transform="translate(706.3 719.6) scale(0.89)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2010" data-band="1" data-depth="288.5" transform="translate(496.4 632.2) scale(0.80)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2010" data-band="2" data-depth="409.8" transform="translate(416.1 578.5) scale(0.89)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2010" data-band="0" data-depth="113.3" transform="translate(678.0 699.9) scale(0.75)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2010" data-band="1" data-depth="227.9" transform="translate(572.2 653.6) scale(0.75)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2010" data-band="2" data-depth="367.6" transform="translate(471.8 593.0) scale(0.78)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2010" data-band="0" data-depth="114.9" transform="translate(648.6 703.4) scale(0.85)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2010" data-band="1" data-depth="212.6" transform="translate(529.0 668.4) scale(0.86)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2010" data-band="2" data-depth="386.9" transform="translate(396.5 593.8) scale(0.84)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2010" data-band="0" data-depth="31.6" transform="translate(640.3 749.8) scale(0.83)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2013" data-band="0" data-depth="76.6" transform="translate(809.8 700.0) scale(0.84)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2013" data-band="1" data-depth="199.6" transform="translate(745.2 643.0) scale(0.79)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2013" data-band="2" data-depth="420.7" transform="translate(648.2 537.7) scale(0.87)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2013" data-band="0" data-depth="51.2" transform="translate(834.1 710.1) scale(0.80)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2013" data-band="1" data-depth="270.3" transform="translate(690.0 613.0) scale(0.84)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2013" data-band="2" data-depth="380.7" transform="translate(663.3 557.2) scale(0.86)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2013" data-band="0" data-depth="108.2" transform="translate(754.0 691.2) scale(0.75)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2013" data-band="1" data-depth="237.0" transform="translate(656.1 636.1) scale(0.75)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2013" data-band="2" data-depth="427.7" transform="translate(573.3 545.2) scale(0.89)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2013" data-band="0" data-depth="104.4" transform="translate(857.3 677.8) scale(0.88)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2013" data-band="1" data-depth="251.4" transform="translate(727.6 617.6) scale(0.87)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2013" data-band="2" data-depth="408.3" transform="translate(606.2 550.8) scale(0.80)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2013" data-band="0" data-depth="84.7" transform="translate(782.0 699.8) scale(0.78)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2013" data-band="1" data-depth="286.8" transform="translate(738.8 596.7) scale(0.86)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2013" data-band="2" data-depth="379.4" transform="translate(604.7 566.6) scale(0.90)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2013" data-band="0" data-depth="133.6" transform="translate(825.0 666.8) scale(0.88)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2013" data-band="1" data-depth="261.1" transform="translate(761.1 607.3) scale(0.88)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2013" data-band="2" data-depth="449.6" transform="translate(588.8 531.0) scale(0.77)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2013" data-band="0" data-depth="28.3" transform="translate(916.8 710.2) scale(0.89)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2013" data-band="1" data-depth="202.5" transform="translate(679.8 651.3) scale(0.84)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2013" data-band="2" data-depth="389.9" transform="translate(573.3 565.7) scale(0.88)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2013" data-band="0" data-depth="46.2" transform="translate(887.5 704.8) scale(0.79)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2013" data-band="1" data-depth="226.2" transform="translate(746.9 628.4) scale(0.80)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2013" data-band="2" data-depth="432.9" transform="translate(620.0 535.4) scale(0.79)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2013" data-band="0" data-depth="23.1" transform="translate(878.1 718.8) scale(0.78)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2013" data-band="1" data-depth="281.5" transform="translate(630.8 615.8) scale(0.81)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2013" data-band="2" data-depth="470.9" transform="translate(560.4 523.7) scale(0.78)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2013" data-band="0" data-depth="70.5" transform="translate(896.2 690.4) scale(0.89)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2013" data-band="1" data-depth="296.4" transform="translate(647.6 605.2) scale(0.74)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2016" data-band="0" data-depth="53.4" transform="translate(1046.3 677.1) scale(0.82)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2016" data-band="1" data-depth="265.0" transform="translate(907.8 583.2) scale(0.79)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2016" data-band="2" data-depth="440.5" transform="translate(680.9 522.1) scale(0.76)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2016" data-band="0" data-depth="111.9" transform="translate(934.1 662.2) scale(0.78)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2016" data-band="1" data-depth="270.3" transform="translate(857.1 587.9) scale(0.80)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2016" data-band="2" data-depth="452.7" transform="translate(753.2 504.6) scale(0.88)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2016" data-band="0" data-depth="83.1" transform="translate(1027.3 663.9) scale(0.82)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2016" data-band="1" data-depth="264.5" transform="translate(807.4 598.5) scale(0.77)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2016" data-band="2" data-depth="467.9" transform="translate(776.3 492.9) scale(0.81)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2016" data-band="0" data-depth="112.2" transform="translate(966.4 657.3) scale(0.85)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2016" data-band="1" data-depth="226.5" transform="translate(889.6 606.8) scale(0.88)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2016" data-band="2" data-depth="463.9" transform="translate(688.9 508.2) scale(0.85)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2016" data-band="0" data-depth="72.7" transform="translate(942.1 682.3) scale(0.85)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2016" data-band="1" data-depth="208.0" transform="translate(864.2 620.7) scale(0.81)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2016" data-band="2" data-depth="440.1" transform="translate(729.3 515.1) scale(0.84)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2016" data-band="0" data-depth="47.8" transform="translate(963.0 692.7) scale(0.88)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2016" data-band="1" data-depth="213.0" transform="translate(947.3 605.5) scale(0.85)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2016" data-band="2" data-depth="404.1" transform="translate(760.5 529.9) scale(0.78)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2016" data-band="0" data-depth="74.4" transform="translate(980.6 675.6) scale(0.85)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2016" data-band="1" data-depth="294.6" transform="translate(793.5 584.3) scale(0.86)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2016" data-band="2" data-depth="389.2" transform="translate(740.7 540.9) scale(0.81)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2016" data-band="0" data-depth="33.5" transform="translate(945.7 703.0) scale(0.89)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2016" data-band="1" data-depth="262.6" transform="translate(836.3 595.2) scale(0.75)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2016" data-band="2" data-depth="377.7" transform="translate(778.9 541.4) scale(0.83)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2016" data-band="0" data-depth="115.9" transform="translate(1005.9 649.3) scale(0.84)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2016" data-band="1" data-depth="221.2" transform="translate(838.3 617.4) scale(0.86)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2016" data-band="2" data-depth="417.7" transform="translate(811.1 514.9) scale(0.83)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2016" data-band="0" data-depth="31.4" transform="translate(1013.0 694.0) scale(0.80)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2016" data-band="1" data-depth="290.5" transform="translate(886.7 572.6) scale(0.90)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2016" data-band="2" data-depth="368.1" transform="translate(827.8 539.3) scale(0.76)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2020" data-band="0" data-depth="47.8" transform="translate(1084.5 674.4) scale(0.82)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2020" data-band="1" data-depth="291.7" transform="translate(920.8 566.8) scale(0.79)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2020" data-band="2" data-depth="435.3" transform="translate(894.9 492.9) scale(0.89)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2020" data-band="0" data-depth="46.3" transform="translate(1211.4 656.2) scale(0.75)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2020" data-band="1" data-depth="297.3" transform="translate(964.2 557.2) scale(0.75)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2020" data-band="2" data-depth="410.6" transform="translate(849.9 513.0) scale(0.75)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2020" data-band="0" data-depth="79.2" transform="translate(1153.5 647.1) scale(0.85)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2020" data-band="1" data-depth="245.4" transform="translate(976.9 583.5) scale(0.85)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2020" data-band="2" data-depth="452.8" transform="translate(826.9 493.5) scale(0.85)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2020" data-band="0" data-depth="122.3" transform="translate(1075.7 635.3) scale(0.79)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2020" data-band="1" data-depth="239.6" transform="translate(1004.7 582.4) scale(0.78)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2020" data-band="2" data-depth="405.7" transform="translate(962.9 498.7) scale(0.82)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2020" data-band="0" data-depth="110.4" transform="translate(1051.3 645.5) scale(0.76)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2020" data-band="1" data-depth="279.1" transform="translate(1019.0 558.9) scale(0.78)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2020" data-band="2" data-depth="460.5" transform="translate(861.0 484.3) scale(0.88)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2020" data-band="0" data-depth="87.2" transform="translate(1125.3 646.9) scale(0.76)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2020" data-band="1" data-depth="205.5" transform="translate(1030.5 597.0) scale(0.76)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2020" data-band="2" data-depth="404.8" transform="translate(931.3 503.9) scale(0.86)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2020" data-band="0" data-depth="43.2" transform="translate(1156.0 666.2) scale(0.84)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2020" data-band="1" data-depth="219.2" transform="translate(971.7 598.4) scale(0.80)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2020" data-band="2" data-depth="465.1" transform="translate(890.1 477.4) scale(0.89)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2020" data-band="0" data-depth="74.8" transform="translate(1182.1 645.1) scale(0.75)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2020" data-band="1" data-depth="243.7" transform="translate(1070.2 570.4) scale(0.87)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2020" data-band="2" data-depth="415.2" transform="translate(875.8 506.6) scale(0.85)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2020" data-band="0" data-depth="51.2" transform="translate(1132.1 665.4) scale(0.77)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2020" data-band="1" data-depth="195.1" transform="translate(1078.2 595.5) scale(0.89)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2020" data-band="2" data-depth="375.3" transform="translate(876.5 528.1) scale(0.77)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2020" data-band="0" data-depth="26.5" transform="translate(1125.3 679.8) scale(0.76)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2020" data-band="1" data-depth="201.5" transform="translate(997.5 604.1) scale(0.79)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2020" data-band="2" data-depth="366.2" transform="translate(957.0 521.0) scale(0.77)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2020" data-band="0" data-depth="108.5" transform="translate(1151.5 631.5) scale(0.78)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2020" data-band="1" data-depth="261.0" transform="translate(952.4 578.7) scale(0.75)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2023" data-band="0" data-depth="114.4" transform="translate(1313.8 603.9) scale(0.78)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2023" data-band="1" data-depth="230.8" transform="translate(1199.3 558.0) scale(0.77)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2023" data-band="2" data-depth="415.4" transform="translate(1071.3 477.1) scale(0.81)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2023" data-band="0" data-depth="31.7" transform="translate(1247.2 658.8) scale(0.86)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2023" data-band="1" data-depth="296.2" transform="translate(1177.6 525.8) scale(0.84)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2023" data-band="2" data-depth="380.1" transform="translate(1056.8 498.5) scale(0.82)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2023" data-band="0" data-depth="45.3" transform="translate(1292.0 644.7) scale(0.74)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2023" data-band="1" data-depth="244.8" transform="translate(1224.8 546.6) scale(0.77)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2023" data-band="2" data-depth="363.6" transform="translate(1135.0 495.7) scale(0.84)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2023" data-band="0" data-depth="58.5" transform="translate(1329.5 631.9) scale(0.79)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2023" data-band="1" data-depth="299.2" transform="translate(1142.2 529.5) scale(0.75)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2023" data-band="2" data-depth="455.7" transform="translate(994.8 466.8) scale(0.77)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2023" data-band="0" data-depth="101.3" transform="translate(1274.2 617.0) scale(0.86)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2023" data-band="1" data-depth="297.2" transform="translate(1097.8 537.2) scale(0.80)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2023" data-band="2" data-depth="378.8" transform="translate(1111.2 491.0) scale(0.83)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2023" data-band="0" data-depth="104.2" transform="translate(1237.9 620.8) scale(0.78)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2023" data-band="1" data-depth="222.8" transform="translate(1164.8 567.5) scale(0.77)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2023" data-band="2" data-depth="418.7" transform="translate(997.6 486.4) scale(0.76)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2023" data-band="0" data-depth="59.4" transform="translate(1360.2 626.8) scale(0.84)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2023" data-band="1" data-depth="277.6" transform="translate(1202.3 532.2) scale(0.76)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2023" data-band="2" data-depth="426.9" transform="translate(1093.3 467.6) scale(0.75)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2023" data-band="0" data-depth="69.1" transform="translate(1255.7 637.2) scale(0.78)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2023" data-band="1" data-depth="294.3" transform="translate(1072.6 542.6) scale(0.90)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2023" data-band="2" data-depth="445.7" transform="translate(974.6 475.2) scale(0.83)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2023" data-band="0" data-depth="79.4" transform="translate(1229.0 635.6) scale(0.84)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2023" data-band="1" data-depth="262.0" transform="translate(1162.4 546.6) scale(0.85)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2023" data-band="2" data-depth="414.6" transform="translate(1026.8 484.3) scale(0.77)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2023" data-band="0" data-depth="82.5" transform="translate(1303.8 622.7) scale(0.75)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2023" data-band="1" data-depth="197.4" transform="translate(1185.6 578.1) scale(0.90)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2023" data-band="2" data-depth="422.4" transform="translate(1117.7 466.4) scale(0.88)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2023" data-band="0" data-depth="117.6" transform="translate(1206.5 618.3) scale(0.78)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2023" data-band="1" data-depth="268.7" transform="translate(1117.3 549.8) scale(0.84)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2026" data-band="0" data-depth="98.1" transform="translate(1361.9 605.5) scale(0.83)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2026" data-band="1" data-depth="268.4" transform="translate(1248.4 530.3) scale(0.80)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2026" data-band="2" data-depth="445.5" transform="translate(1140.0 450.6) scale(0.89)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2026" data-band="0" data-depth="27.7" transform="translate(1412.0 636.2) scale(0.81)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2026" data-band="1" data-depth="234.9" transform="translate(1317.2 538.1) scale(0.90)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2026" data-band="2" data-depth="410.1" transform="translate(1144.8 469.0) scale(0.82)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2026" data-band="0" data-depth="75.2" transform="translate(1423.2 608.7) scale(0.84)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2026" data-band="1" data-depth="303.4" transform="translate(1253.8 510.5) scale(0.74)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2026" data-band="2" data-depth="379.5" transform="translate(1218.6 474.5) scale(0.74)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2026" data-band="0" data-depth="99.1" transform="translate(1405.6 598.5) scale(0.82)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2026" data-band="1" data-depth="198.5" transform="translate(1331.6 555.7) scale(0.76)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2026" data-band="2" data-depth="415.6" transform="translate(1166.0 462.9) scale(0.80)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2026" data-band="0" data-depth="74.6" transform="translate(1379.7 615.6) scale(0.79)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2026" data-band="1" data-depth="293.0" transform="translate(1225.9 520.3) scale(0.87)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2026" data-band="2" data-depth="386.0" transform="translate(1160.7 479.7) scale(0.81)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2026" data-band="0" data-depth="127.8" transform="translate(1347.1 591.7) scale(0.83)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2026" data-band="1" data-depth="272.3" transform="translate(1275.2 524.1) scale(0.79)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2026" data-band="2" data-depth="379.9" transform="translate(1195.1 477.8) scale(0.84)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2026" data-band="0" data-depth="28.8" transform="translate(1435.6 632.1) scale(0.75)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2026" data-band="1" data-depth="261.7" transform="translate(1301.9 525.9) scale(0.74)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2026" data-band="2" data-depth="472.2" transform="translate(1115.3 439.8) scale(0.82)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2026" data-band="0" data-depth="54.2" transform="translate(1398.8 623.8) scale(0.77)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2026" data-band="1" data-depth="199.3" transform="translate(1306.1 559.1) scale(0.83)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2026" data-band="2" data-depth="466.3" transform="translate(1150.7 437.6) scale(0.75)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2026" data-band="0" data-depth="123.5" transform="translate(1390.4 587.5) scale(0.79)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2026" data-band="1" data-depth="244.1" transform="translate(1255.8 542.3) scale(0.80)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2026" data-band="2" data-depth="402.9" transform="translate(1192.7 465.7) scale(0.87)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2026" data-band="0" data-depth="101.8" transform="translate(1384.5 600.2) scale(0.77)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2026" data-band="1" data-depth="219.7" transform="translate(1332.6 544.0) scale(0.75)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2026" data-band="2" data-depth="367.7" transform="translate(1175.3 487.4) scale(0.87)"><use href="#person-standing"/></g>
+<g class="person-silhouette" data-year="2026" data-band="0" data-depth="56.4" transform="translate(1416.1 620.0) scale(0.85)"><use href="#person-walking"/></g>
+<g class="person-silhouette" data-year="2026" data-band="1" data-depth="296.5" transform="translate(1275.4 511.0) scale(0.83)"><use href="#person-coat"/></g>
+<g class="person-silhouette" data-year="2026" data-band="2" data-depth="397.2" transform="translate(1177.8 471.0) scale(0.89)"><use href="#person-standing"/></g>
+</g>
+<defs>
 <g id="fauna-wolf"><path d="M-25,-18 -17,-22 1,-21 10,-27 15,-28 16,-37 21,-31 25,-35 26,-26 35,-22 35,-18 25,-16 21,-10 17,-6 17,7 13,7 11,-9 5,-10 -4,-9 -7,6 -12,6 -10,-11 -17,-12 -22,-2 -26,6 -30,6 -27,-5 -24,-13 -30,-7 -40,-5 -36,-11Z"/></g>
 <g id="fauna-fox"><path d="M-19,-16 -11,-19 4,-18 11,-23 13,-32 18,-27 23,-30 23,-22 34,-18 25,-13 17,-12 12,-6 13,5 9,5 6,-8 -2,-8 -8,5 -12,5 -9,-9 -17,-10 -22,-3 -33,0 -45,-6 -38,-17 -28,-22 -21,-19Z"/></g>
 <g id="fauna-woodpecker"><path d="M1,-19 7,-23 11,-20 12,-15 23,-13 12,-10 11,-1 7,8 -2,23 -5,19 -2,9 -8,0 -9,-8 -5,-16Z"/><path d="M5,7 12,5 M3,10 11,9" fill="none" stroke="currentColor" stroke-width="1.5"/></g>
@@ -1009,7 +1228,7 @@
 <text text-anchor="start" font-family="Inter,Arial,sans-serif" font-size="22" font-weight="500" fill="#354139"><tspan x="0" y="-10">Ecosistemi</tspan><tspan x="0" y="16">e clima</tspan></text></g>
 <g class="band-title" data-band="2" transform="translate(-20.20 623.85) rotate(0)">
 <text text-anchor="start" font-family="Inter,Arial,sans-serif" font-size="22" font-weight="500" fill="#354139"><tspan x="0" y="-10">Comunità</tspan><tspan x="0" y="16">e decisioni</tspan></text></g>
-<g class="forest-band-title" transform="translate(-200 549)"><text text-anchor="start" font-family="Inter,Arial,sans-serif" font-size="22" font-weight="500" fill="#354139"><tspan x="0" y="-10">Foresta a</tspan><tspan x="0" y="16">Muhos e Otanmäki</tspan></text></g><text class="fauna-legend" x="-200" y="590" font-family="Inter,Arial,sans-serif" font-size="11" fill="#576254">Fauna · scena simbolica</text>
+<text class="people-legend" x="211" y="821" font-family="Inter,Arial,sans-serif" font-size="11" fill="#576254"><tspan x="211">Popolazione mondiale</tspan><tspan x="211" dy="15">1 sagoma ≈ 250 milioni</tspan></text><g class="forest-band-title" transform="translate(-200 549)"><text text-anchor="start" font-family="Inter,Arial,sans-serif" font-size="22" font-weight="500" fill="#354139"><tspan x="0" y="-10">Foresta a</tspan><tspan x="0" y="16">Muhos e Otanmäki</tspan></text></g><text class="fauna-legend" x="-200" y="590" font-family="Inter,Arial,sans-serif" font-size="11" fill="#576254">Fauna · scena simbolica</text>
 <path d="M433.60,808.80 L1503.60,648.30" stroke="#657267" stroke-width="1.1"/>
 <path d="M433.60,802.80 V815.80" stroke="#657267" stroke-width="1"/><text x="433.60" y="841.80" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="18" fill="#354139">1950</text>
 <path d="M586.46,779.87 V792.87" stroke="#657267" stroke-width="1"/><text x="586.46" y="818.87" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="18" fill="#354139">1980</text>
@@ -1042,7 +1261,7 @@ function projection(t,depth,height=0){return{x:420+t-.68*depth,y:800-.15*t-.44*d
 function yearToT(year){const v=Math.max(1950,Math.min(2026,year));for(let i=0;i<years.length-1;i++){if(v<=years[i+1])return(i+(v-years[i])/(years[i+1]-years[i]))/7*1070;}return 1070;}
 const ns='http://www.w3.org/2000/svg';
 function svg(name,attrs={}){const n=document.createElementNS(ns,name);for(const[k,v]of Object.entries(attrs))n.setAttribute(k,String(v));return n;}
-const forestTargetLayer=svg('g',{class:'forest-target-layer'});overlay.append(forestTargetLayer);const faunaTargetLayer=svg('g',{class:'fauna-target-layer'});overlay.append(faunaTargetLayer);const markers=[];const byId=new Map();let lastOpenedPin=null;
+const forestTargetLayer=svg('g',{class:'forest-target-layer'});overlay.append(forestTargetLayer);const peopleTargetLayer=svg('g',{class:'people-target-layer'});overlay.append(peopleTargetLayer);const faunaTargetLayer=svg('g',{class:'fauna-target-layer'});overlay.append(faunaTargetLayer);const markers=[];const byId=new Map();let lastOpenedPin=null;
 // Collegamenti ripresi dai fili rossi della timeline fornita.
 // Le coppie sono simmetriche; si mostrano i vicini diretti del pin attivo.
 const eventConnections = [
@@ -1154,7 +1373,7 @@ function closeEvent(restoreFocus=true){panel.hidden=true;selectedId=null;hovered
 closeButton.addEventListener('click',()=>closeEvent());
 // Il clic su un altro pin apre direttamente il nuovo evento.
 window.addEventListener('click',event=>{
- if(panel.hidden||panel.contains(event.target)||event.target.closest?.('.pin-hit,.forest-hit,.fauna-hit'))return;
+ if(panel.hidden||panel.contains(event.target)||event.target.closest?.('.pin-hit,.forest-hit,.fauna-hit,.people-hit'))return;
  const active=document.activeElement;
  closeEvent(false);
  if(active&&panel.contains(active))active.blur();
@@ -1221,6 +1440,24 @@ function updateFaunaTargets(scale,offsetX,offsetY){
  for(const {item,hit}of faunaTargets){hit.setAttribute('cx',offsetX+item.x*scale);hit.setAttribute('cy',offsetY+item.y*scale);}
 }
 
+
+const populationDetail={"id":"population-detail","band":2,"date":"1950–2026 · popolazione al 1° luglio","place":"Mondo","title":"Popolazione mondiale: crescita demografica","short":"Popolazione mondiale","image":"","description":"AMBITO E FONTE\nQuesto layer rappresenta la popolazione mondiale. Fonte statistica: United Nations, World Population Prospects 2024; serie annuale consultata nella tabella di Population Matters, arrotondata al milione. Non è una serie di residenti di Muhos, Otanmäki o della sola Finlandia.\n\nVALORI UTILIZZATI\n1950: 2,493 miliardi · stima storica · 10 sagome\n1980: 4,448 miliardi · stima storica · 18 sagome\n2010: 7,022 miliardi · stima storica · 28 sagome\n2013: 7,292 miliardi · stima storica · 29 sagome\n2016: 7,559 miliardi · stima storica · 30 sagome\n2020: 7,887 miliardi · stima storica · 32 sagome\n2023: 8,092 miliardi · stima storica · 32 sagome\n2026: 8,301 miliardi · proiezione media · 33 sagome\n\nSTIME E PROIEZIONI\nNella revisione ONU 2024, il periodo 1950–2023 contiene stime storiche; dal 2024 in avanti i valori appartengono alle proiezioni. Per il 2026 è utilizzata la variante media, non un censimento definitivo o un conteggio in tempo reale.\n\nSCALA DELLE SAGOME\nIl totale di figure per ciascun riferimento temporale è ottenuto dividendo la popolazione per 250 milioni e arrotondando all’intero più vicino. Le sagome sono distribuite complessivamente tra le tre fasce: non si tratta di tre popolazioni da sommare, né di una ripartizione statistica per categoria. Ogni riferimento è una fotografia della popolazione mondiale e non si somma ai riferimenti vicini. L’arrotondamento può rendere uguali due quantità grafiche anche quando i dati crescono.\n\nLETTURA DELLA SCENA\nLe figure cambiano posa e disposizione per una resa naturale; posa e dimensione non rappresentano professione, genere o classe d’età. Sono tutte collocate nelle fasce Infrastrutture, Ecosistemi e Comunità. La contemporaneità con nebbia e disboscamento non quantifica un nesso causale tra popolazione, CO₂ e i tagli forestali dei due progetti.","sources":[{"label":"ONU · World Population Prospects 2024, dati e metodologia","url":"https://population.un.org/wpp/"},{"label":"Population Matters · tabella annuale WPP 2024, 1950–2100","url":"https://populationmatters.org/the-facts-numbers/"},{"label":"UNFPA · popolazione mondiale 2025 e definizioni","url":"https://www.unfpa.org/data/world-population/WORLD"}]};
+const populationSnapshots=[{"year":1950,"millions":2493,"kind":"stima storica","figures":10},{"year":1980,"millions":4448,"kind":"stima storica","figures":18},{"year":2010,"millions":7022,"kind":"stima storica","figures":28},{"year":2013,"millions":7292,"kind":"stima storica","figures":29},{"year":2016,"millions":7559,"kind":"stima storica","figures":30},{"year":2020,"millions":7887,"kind":"stima storica","figures":32},{"year":2023,"millions":8092,"kind":"stima storica","figures":32},{"year":2026,"millions":8301,"kind":"proiezione media","figures":33}];
+const peoplePositions=[{"x":365.2,"y":733.3,"year":1950,"depth":114.2,"band":0},{"x":313.5,"y":672.1,"year":1950,"depth":241.4,"band":1},{"x":191.3,"y":617.3,"year":1950,"depth":376.4,"band":2},{"x":439.7,"y":763.2,"year":1950,"depth":38.4,"band":0},{"x":292.8,"y":689.6,"year":1950,"depth":215.0,"band":1},{"x":199.6,"y":600.5,"year":1950,"depth":405.2,"band":2},{"x":413.5,"y":768.5,"year":1950,"depth":36.0,"band":0},{"x":264.9,"y":658.9,"year":1950,"depth":279.3,"band":1},{"x":172.2,"y":585.7,"year":1950,"depth":439.9,"band":2},{"x":383.3,"y":754.2,"year":1950,"depth":70.7,"band":0},{"x":469.9,"y":728.5,"year":1980,"depth":94.2,"band":0},{"x":360.0,"y":678.0,"year":1980,"depth":217.6,"band":1},{"x":252.7,"y":601.2,"year":1980,"depth":389.1,"band":2},{"x":537.6,"y":708.6,"year":1980,"depth":112.0,"band":0},{"x":424.8,"y":669.2,"year":1980,"depth":216.1,"band":1},{"x":276.4,"y":604.5,"year":1980,"depth":376.5,"band":2},{"x":579.8,"y":743.1,"year":1980,"depth":36.8,"band":0},{"x":406.9,"y":652.5,"year":1980,"depth":251.7,"band":1},{"x":238.3,"y":568.9,"year":1980,"depth":452.7,"band":2},{"x":436.8,"y":730.4,"year":1980,"depth":99.7,"band":0},{"x":385.2,"y":659.0,"year":1980,"depth":245.8,"band":1},{"x":362.0,"y":586.4,"year":1980,"depth":386.2,"band":2},{"x":488.7,"y":704.4,"year":1980,"depth":133.5,"band":0},{"x":381.2,"y":684.9,"year":1980,"depth":199.2,"band":1},{"x":327.9,"y":593.5,"year":1980,"depth":382.6,"band":2},{"x":499.2,"y":757.2,"year":1980,"depth":33.0,"band":0},{"x":369.0,"y":645.2,"year":1980,"depth":275.7,"band":1},{"x":305.8,"y":578.5,"year":1980,"depth":416.2,"band":2},{"x":594.6,"y":697.6,"year":2010,"depth":116.7,"band":0},{"x":561.4,"y":656.7,"year":2010,"depth":201.3,"band":1},{"x":459.5,"y":533.8,"year":2010,"depth":456.3,"band":2},{"x":696.5,"y":728.2,"year":2010,"depth":32.0,"band":0},{"x":502.9,"y":649.3,"year":2010,"depth":231.1,"band":1},{"x":514.0,"y":574.2,"year":2010,"depth":366.5,"band":2},{"x":667.9,"y":729.6,"year":2010,"depth":37.3,"band":0},{"x":534.8,"y":610.3,"year":2010,"depth":294.2,"band":1},{"x":441.0,"y":562.0,"year":2010,"depth":409.4,"band":2},{"x":704.2,"y":687.7,"year":2010,"depth":104.6,"band":0},{"x":599.1,"y":640.4,"year":2010,"depth":220.9,"band":1},{"x":371.0,"y":560.8,"year":2010,"depth":431.0,"band":2},{"x":660.4,"y":704.5,"year":2010,"depth":85.7,"band":0},{"x":471.7,"y":614.7,"year":2010,"depth":303.6,"band":1},{"x":500.7,"y":553.5,"year":2010,"depth":408.4,"band":2},{"x":622.3,"y":711.7,"year":2010,"depth":83.0,"band":0},{"x":542.7,"y":633.9,"year":2010,"depth":248.5,"band":1},{"x":385.4,"y":549.6,"year":2010,"depth":447.6,"band":2},{"x":706.3,"y":706.6,"year":2010,"depth":69.2,"band":0},{"x":496.4,"y":619.2,"year":2010,"depth":288.5,"band":1},{"x":416.1,"y":565.5,"year":2010,"depth":409.8,"band":2},{"x":678.0,"y":686.9,"year":2010,"depth":113.3,"band":0},{"x":572.2,"y":640.6,"year":2010,"depth":227.9,"band":1},{"x":471.8,"y":580.0,"year":2010,"depth":367.6,"band":2},{"x":648.6,"y":690.4,"year":2010,"depth":114.9,"band":0},{"x":529.0,"y":655.4,"year":2010,"depth":212.6,"band":1},{"x":396.5,"y":580.8,"year":2010,"depth":386.9,"band":2},{"x":640.3,"y":736.8,"year":2010,"depth":31.6,"band":0},{"x":809.8,"y":687.0,"year":2013,"depth":76.6,"band":0},{"x":745.2,"y":630.0,"year":2013,"depth":199.6,"band":1},{"x":648.2,"y":524.7,"year":2013,"depth":420.7,"band":2},{"x":834.1,"y":697.1,"year":2013,"depth":51.2,"band":0},{"x":690.0,"y":600.0,"year":2013,"depth":270.3,"band":1},{"x":663.3,"y":544.2,"year":2013,"depth":380.7,"band":2},{"x":754.0,"y":678.2,"year":2013,"depth":108.2,"band":0},{"x":656.1,"y":623.1,"year":2013,"depth":237.0,"band":1},{"x":573.3,"y":532.2,"year":2013,"depth":427.7,"band":2},{"x":857.3,"y":664.8,"year":2013,"depth":104.4,"band":0},{"x":727.6,"y":604.6,"year":2013,"depth":251.4,"band":1},{"x":606.2,"y":537.8,"year":2013,"depth":408.3,"band":2},{"x":782.0,"y":686.8,"year":2013,"depth":84.7,"band":0},{"x":738.8,"y":583.7,"year":2013,"depth":286.8,"band":1},{"x":604.7,"y":553.6,"year":2013,"depth":379.4,"band":2},{"x":825.0,"y":653.8,"year":2013,"depth":133.6,"band":0},{"x":761.1,"y":594.3,"year":2013,"depth":261.1,"band":1},{"x":588.8,"y":518.0,"year":2013,"depth":449.6,"band":2},{"x":916.8,"y":697.2,"year":2013,"depth":28.3,"band":0},{"x":679.8,"y":638.3,"year":2013,"depth":202.5,"band":1},{"x":573.3,"y":552.7,"year":2013,"depth":389.9,"band":2},{"x":887.5,"y":691.8,"year":2013,"depth":46.2,"band":0},{"x":746.9,"y":615.4,"year":2013,"depth":226.2,"band":1},{"x":620.0,"y":522.4,"year":2013,"depth":432.9,"band":2},{"x":878.1,"y":705.8,"year":2013,"depth":23.1,"band":0},{"x":630.8,"y":602.8,"year":2013,"depth":281.5,"band":1},{"x":560.4,"y":510.7,"year":2013,"depth":470.9,"band":2},{"x":896.2,"y":677.4,"year":2013,"depth":70.5,"band":0},{"x":647.6,"y":592.2,"year":2013,"depth":296.4,"band":1},{"x":1046.3,"y":664.1,"year":2016,"depth":53.4,"band":0},{"x":907.8,"y":570.2,"year":2016,"depth":265.0,"band":1},{"x":680.9,"y":509.1,"year":2016,"depth":440.5,"band":2},{"x":934.1,"y":649.2,"year":2016,"depth":111.9,"band":0},{"x":857.1,"y":574.9,"year":2016,"depth":270.3,"band":1},{"x":753.2,"y":491.6,"year":2016,"depth":452.7,"band":2},{"x":1027.3,"y":650.9,"year":2016,"depth":83.1,"band":0},{"x":807.4,"y":585.5,"year":2016,"depth":264.5,"band":1},{"x":776.3,"y":479.9,"year":2016,"depth":467.9,"band":2},{"x":966.4,"y":644.3,"year":2016,"depth":112.2,"band":0},{"x":889.6,"y":593.8,"year":2016,"depth":226.5,"band":1},{"x":688.9,"y":495.2,"year":2016,"depth":463.9,"band":2},{"x":942.1,"y":669.3,"year":2016,"depth":72.7,"band":0},{"x":864.2,"y":607.7,"year":2016,"depth":208.0,"band":1},{"x":729.3,"y":502.1,"year":2016,"depth":440.1,"band":2},{"x":963.0,"y":679.7,"year":2016,"depth":47.8,"band":0},{"x":947.3,"y":592.5,"year":2016,"depth":213.0,"band":1},{"x":760.5,"y":516.9,"year":2016,"depth":404.1,"band":2},{"x":980.6,"y":662.6,"year":2016,"depth":74.4,"band":0},{"x":793.5,"y":571.3,"year":2016,"depth":294.6,"band":1},{"x":740.7,"y":527.9,"year":2016,"depth":389.2,"band":2},{"x":945.7,"y":690.0,"year":2016,"depth":33.5,"band":0},{"x":836.3,"y":582.2,"year":2016,"depth":262.6,"band":1},{"x":778.9,"y":528.4,"year":2016,"depth":377.7,"band":2},{"x":1005.9,"y":636.3,"year":2016,"depth":115.9,"band":0},{"x":838.3,"y":604.4,"year":2016,"depth":221.2,"band":1},{"x":811.1,"y":501.9,"year":2016,"depth":417.7,"band":2},{"x":1013.0,"y":681.0,"year":2016,"depth":31.4,"band":0},{"x":886.7,"y":559.6,"year":2016,"depth":290.5,"band":1},{"x":827.8,"y":526.3,"year":2016,"depth":368.1,"band":2},{"x":1084.5,"y":661.4,"year":2020,"depth":47.8,"band":0},{"x":920.8,"y":553.8,"year":2020,"depth":291.7,"band":1},{"x":894.9,"y":479.9,"year":2020,"depth":435.3,"band":2},{"x":1211.4,"y":643.2,"year":2020,"depth":46.3,"band":0},{"x":964.2,"y":544.2,"year":2020,"depth":297.3,"band":1},{"x":849.9,"y":500.0,"year":2020,"depth":410.6,"band":2},{"x":1153.5,"y":634.1,"year":2020,"depth":79.2,"band":0},{"x":976.9,"y":570.5,"year":2020,"depth":245.4,"band":1},{"x":826.9,"y":480.5,"year":2020,"depth":452.8,"band":2},{"x":1075.7,"y":622.3,"year":2020,"depth":122.3,"band":0},{"x":1004.7,"y":569.4,"year":2020,"depth":239.6,"band":1},{"x":962.9,"y":485.7,"year":2020,"depth":405.7,"band":2},{"x":1051.3,"y":632.5,"year":2020,"depth":110.4,"band":0},{"x":1019.0,"y":545.9,"year":2020,"depth":279.1,"band":1},{"x":861.0,"y":471.3,"year":2020,"depth":460.5,"band":2},{"x":1125.3,"y":633.9,"year":2020,"depth":87.2,"band":0},{"x":1030.5,"y":584.0,"year":2020,"depth":205.5,"band":1},{"x":931.3,"y":490.9,"year":2020,"depth":404.8,"band":2},{"x":1156.0,"y":653.2,"year":2020,"depth":43.2,"band":0},{"x":971.7,"y":585.4,"year":2020,"depth":219.2,"band":1},{"x":890.1,"y":464.4,"year":2020,"depth":465.1,"band":2},{"x":1182.1,"y":632.1,"year":2020,"depth":74.8,"band":0},{"x":1070.2,"y":557.4,"year":2020,"depth":243.7,"band":1},{"x":875.8,"y":493.6,"year":2020,"depth":415.2,"band":2},{"x":1132.1,"y":652.4,"year":2020,"depth":51.2,"band":0},{"x":1078.2,"y":582.5,"year":2020,"depth":195.1,"band":1},{"x":876.5,"y":515.1,"year":2020,"depth":375.3,"band":2},{"x":1125.3,"y":666.8,"year":2020,"depth":26.5,"band":0},{"x":997.5,"y":591.1,"year":2020,"depth":201.5,"band":1},{"x":957.0,"y":508.0,"year":2020,"depth":366.2,"band":2},{"x":1151.5,"y":618.5,"year":2020,"depth":108.5,"band":0},{"x":952.4,"y":565.7,"year":2020,"depth":261.0,"band":1},{"x":1313.8,"y":590.9,"year":2023,"depth":114.4,"band":0},{"x":1199.3,"y":545.0,"year":2023,"depth":230.8,"band":1},{"x":1071.3,"y":464.1,"year":2023,"depth":415.4,"band":2},{"x":1247.2,"y":645.8,"year":2023,"depth":31.7,"band":0},{"x":1177.6,"y":512.8,"year":2023,"depth":296.2,"band":1},{"x":1056.8,"y":485.5,"year":2023,"depth":380.1,"band":2},{"x":1292.0,"y":631.7,"year":2023,"depth":45.3,"band":0},{"x":1224.8,"y":533.6,"year":2023,"depth":244.8,"band":1},{"x":1135.0,"y":482.7,"year":2023,"depth":363.6,"band":2},{"x":1329.5,"y":618.9,"year":2023,"depth":58.5,"band":0},{"x":1142.2,"y":516.5,"year":2023,"depth":299.2,"band":1},{"x":994.8,"y":453.8,"year":2023,"depth":455.7,"band":2},{"x":1274.2,"y":604.0,"year":2023,"depth":101.3,"band":0},{"x":1097.8,"y":524.2,"year":2023,"depth":297.2,"band":1},{"x":1111.2,"y":478.0,"year":2023,"depth":378.8,"band":2},{"x":1237.9,"y":607.8,"year":2023,"depth":104.2,"band":0},{"x":1164.8,"y":554.5,"year":2023,"depth":222.8,"band":1},{"x":997.6,"y":473.4,"year":2023,"depth":418.7,"band":2},{"x":1360.2,"y":613.8,"year":2023,"depth":59.4,"band":0},{"x":1202.3,"y":519.2,"year":2023,"depth":277.6,"band":1},{"x":1093.3,"y":454.6,"year":2023,"depth":426.9,"band":2},{"x":1255.7,"y":624.2,"year":2023,"depth":69.1,"band":0},{"x":1072.6,"y":529.6,"year":2023,"depth":294.3,"band":1},{"x":974.6,"y":462.2,"year":2023,"depth":445.7,"band":2},{"x":1229.0,"y":622.6,"year":2023,"depth":79.4,"band":0},{"x":1162.4,"y":533.6,"year":2023,"depth":262.0,"band":1},{"x":1026.8,"y":471.3,"year":2023,"depth":414.6,"band":2},{"x":1303.8,"y":609.7,"year":2023,"depth":82.5,"band":0},{"x":1185.6,"y":565.1,"year":2023,"depth":197.4,"band":1},{"x":1117.7,"y":453.4,"year":2023,"depth":422.4,"band":2},{"x":1206.5,"y":605.3,"year":2023,"depth":117.6,"band":0},{"x":1117.3,"y":536.8,"year":2023,"depth":268.7,"band":1},{"x":1361.9,"y":592.5,"year":2026,"depth":98.1,"band":0},{"x":1248.4,"y":517.3,"year":2026,"depth":268.4,"band":1},{"x":1140.0,"y":437.6,"year":2026,"depth":445.5,"band":2},{"x":1412.0,"y":623.2,"year":2026,"depth":27.7,"band":0},{"x":1317.2,"y":525.1,"year":2026,"depth":234.9,"band":1},{"x":1144.8,"y":456.0,"year":2026,"depth":410.1,"band":2},{"x":1423.2,"y":595.7,"year":2026,"depth":75.2,"band":0},{"x":1253.8,"y":497.5,"year":2026,"depth":303.4,"band":1},{"x":1218.6,"y":461.5,"year":2026,"depth":379.5,"band":2},{"x":1405.6,"y":585.5,"year":2026,"depth":99.1,"band":0},{"x":1331.6,"y":542.7,"year":2026,"depth":198.5,"band":1},{"x":1166.0,"y":449.9,"year":2026,"depth":415.6,"band":2},{"x":1379.7,"y":602.6,"year":2026,"depth":74.6,"band":0},{"x":1225.9,"y":507.3,"year":2026,"depth":293.0,"band":1},{"x":1160.7,"y":466.7,"year":2026,"depth":386.0,"band":2},{"x":1347.1,"y":578.7,"year":2026,"depth":127.8,"band":0},{"x":1275.2,"y":511.1,"year":2026,"depth":272.3,"band":1},{"x":1195.1,"y":464.8,"year":2026,"depth":379.9,"band":2},{"x":1435.6,"y":619.1,"year":2026,"depth":28.8,"band":0},{"x":1301.9,"y":512.9,"year":2026,"depth":261.7,"band":1},{"x":1115.3,"y":426.8,"year":2026,"depth":472.2,"band":2},{"x":1398.8,"y":610.8,"year":2026,"depth":54.2,"band":0},{"x":1306.1,"y":546.1,"year":2026,"depth":199.3,"band":1},{"x":1150.7,"y":424.6,"year":2026,"depth":466.3,"band":2},{"x":1390.4,"y":574.5,"year":2026,"depth":123.5,"band":0},{"x":1255.8,"y":529.3,"year":2026,"depth":244.1,"band":1},{"x":1192.7,"y":452.7,"year":2026,"depth":402.9,"band":2},{"x":1384.5,"y":587.2,"year":2026,"depth":101.8,"band":0},{"x":1332.6,"y":531.0,"year":2026,"depth":219.7,"band":1},{"x":1175.3,"y":474.4,"year":2026,"depth":367.7,"band":2},{"x":1416.1,"y":607.0,"year":2026,"depth":56.4,"band":0},{"x":1275.4,"y":498.0,"year":2026,"depth":296.5,"band":1},{"x":1177.8,"y":458.0,"year":2026,"depth":397.2,"band":2}];
+const peopleTargets=[];
+function makePeopleTargets(){
+ for(const item of peoplePositions){
+  const hit=svg('circle',{class:'people-hit',r:8,fill:'transparent',tabindex:-1,role:'button','aria-label':'Popolazione mondiale, '+item.year+'. Apri dati demografici.','aria-controls':'event-detail'});
+  const title=svg('title');title.textContent='Popolazione mondiale · '+item.year+' · clic per dati e scala';hit.append(title);
+  peopleTargetLayer.append(hit);peopleTargets.push({item,hit});
+  hit.addEventListener('click',()=>openPopulation(hit));
+ }
+ // One keyboard stop per year avoids hundreds of repeated tab stops.
+ for(const entry of populationSnapshots){const target=peopleTargets.find(t=>t.item.year===entry.year);target.hit.setAttribute('tabindex',0);target.hit.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openPopulation(target.hit);}});}
+}
+function openPopulation(hit){openEvent({event:populationDetail,hit});}
+function updatePeopleTargets(scale,offsetX,offsetY){for(const{item,hit}of peopleTargets){hit.setAttribute('cx',offsetX+item.x*scale);hit.setAttribute('cy',offsetY+item.y*scale);}}
+
 // Aste e pin si trovano tra un separè e il successivo.
 const stemLayer=svg('g',{'aria-hidden':'true',class:'stem-layer'});
 overlay.append(stemLayer);
@@ -1261,8 +1498,9 @@ function resize(){
  updateConnections();
  updateForestTargets(scale,offsetX,offsetY);
  updateFaunaTargets(scale,offsetX,offsetY);
+ updatePeopleTargets(scale,offsetX,offsetY);
 }
-makeEvents();makeForestTargets();makeFaunaTargets();resize();syncFocus();
+makeEvents();makeForestTargets();makeFaunaTargets();makePeopleTargets();resize();syncFocus();
 window.addEventListener('resize',resize);
 if(document.fonts)document.fonts.ready.then(()=>resize());
 </script></body></html>
